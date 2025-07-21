@@ -7,3 +7,14 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+BlogPost.destroy_all
+
+# Heres it creates a test post and says finish creating the seed post.
+
+BlogPost.create(
+    title: 'placeholder :)',
+    description: 'ello',
+    body: 'this is a test lorem ipsum',
+)
+
+puts "Created seed data"

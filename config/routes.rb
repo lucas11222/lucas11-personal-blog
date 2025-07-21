@@ -12,3 +12,13 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 end
+Rails.application.routes.draw do
+  scope '/api' do
+    resources :posts, controller: 'blog_posts'
+  end
+end
+private
+        def post_params
+            params.require(:blog_post).permit(:title, :description,
+                                              :body)
+        end
