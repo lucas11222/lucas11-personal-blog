@@ -2,12 +2,10 @@ class BlogPostsController < ApplicationController
 
   def index
       @posts = BlogPost.all
-      render json: @posts
   end
 
   def show
       @post = BlogPost.find_by(id: params[:id])
-      render json: @post
   end
 
   def create
@@ -32,10 +30,10 @@ class BlogPostsController < ApplicationController
           @post.destroy
       end
   end
-  
+
   private
       def post_params
           params.require(:blog_post).permit(:title, :description, :body)
       end
-  
+
 end

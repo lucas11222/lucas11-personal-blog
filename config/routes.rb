@@ -10,15 +10,11 @@ Rails.application.routes.draw do
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
   # Defines the root path route ("/")
-  # root "posts#index"
+  resources :blog_posts
+  root "blog_posts#index"
 end
 Rails.application.routes.draw do
   scope '/api' do
     resources :posts, controller: 'blog_posts'
   end
 end
-private
-        def post_params
-            params.require(:blog_post).permit(:title, :description,
-                                              :body)
-        end
