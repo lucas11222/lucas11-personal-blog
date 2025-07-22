@@ -12,8 +12,8 @@ BlogPost.destroy_all
 # Heres it creates a test post and says finish creating the seed post.
 
 BlogPost.create(
-    title: 'placeholder :)',
-    description: 'ello',
+    title: 'Hello!',
+    description: 'ignore this post, it just a seed post.',
     body: 'this is a test lorem ipsum',
 )
 

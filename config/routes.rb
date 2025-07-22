@@ -11,6 +11,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   resources :blog_posts
+  resources :blog_posts do
+    collection do
+      post :import_from_md
+    end
+  end
   root "blog_posts#index"
 end
 Rails.application.routes.draw do

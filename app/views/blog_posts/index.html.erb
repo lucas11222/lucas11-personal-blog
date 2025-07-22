@@ -2,10 +2,10 @@
     <h1>welcome to my blog!</h1>
     <% @posts.each do |post| %>
     <div style="margin-bottom: 20px;">
-      <h1>
-        <%= link_to post.title, blog_post_path(post) %>
-      </h1>
-      <h2><strong>Description:</strong> <%= post.description %></h2>
+      <h2>
+        Title: <%= link_to post.title, blog_post_path(post) %>
+      </h2>
+      <h3>Description: <%= post.description %></h3>
     </div>
   <% end %>
 </div>

@@ -1,9 +1,9 @@
 <div class="content">
-    <h1><%= @post.title %></h1>
+    <h1>Title: <%= @post.title %></h1>
 
-    <h2><strong>Description:</strong> <%= @post.description %></>
+    <h2>Description: <%= @post.description %></>
 
-    <div>
-      <h3><%= simple_format(@post.body) %></h3>
+    <div class="markdown-body">
+      <%= markdown(@post.body) %>
     </div>
 </div>
