@@ -1,5 +1,5 @@
 namespace :blog_posts do
-  desc "Importar archivos .md desde storage/posts_md/ como posts"
+  desc "Import .md to posts."
   task import_md: :environment do
     require 'pathname'
     require 'yaml'
