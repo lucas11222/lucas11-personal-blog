@@ -14,6 +14,9 @@ def create
     @post = BlogPost.new(post_params)
     if @post
         @post.save
+        render json: @post, status: :created
+    else
+        render json: { error: 'Failed to create post' }, status: :unprocessable_entity
     end
 end
 
@@ -22,6 +25,9 @@ def update
     @post = BlogPost.find_by(id: params[:id])
     if @post
         @post.update(post_params)
+        render json: @post, status: :ok
+    else
+        render json: { error: 'Post not found. Check the ID.' }, status: :not_found
     end
 end
 
@@ -29,6 +35,8 @@ def destroy
     @post = BlogPost.find_by(id: params[:id])
     if @post
         @post.destroy
+      else
+        render json: { error: 'Post not found. Check the ID.' }, status: :not_found
     end
 end
 
