@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: mysite
+    runtime: ruby
+    plan: free
+    buildCommand: './bin/render-build.sh'
+    startCommand: './bin/rails server'
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: personal-blog
+          property: postgresql://personal_blog_1i5u_user:2ijyT1zfNiwBzterduVc6O9EGANnPbJv@dpg-d1vn4humcj7s73fhurag-a/personal_blog_1i5u
+      - key: RAILS_MASTER_KEY
+        sync: false
+      - key: WEB_CONCURRENCY
+        value: 2
