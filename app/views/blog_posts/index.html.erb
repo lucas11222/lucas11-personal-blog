@@ -1,11 +1,13 @@
 <div class="content">
     <h1>welcome to my blog!</h1>
+    <h2><a href="/blog_posts/new">Create an post</a></h2>
     <% @posts.each do |post| %>
     <div style="margin-bottom: 20px;">
       <h2>
         Title: <%= link_to post.title, blog_post_path(post) %>
       </h2>
       <h3>Description: <%= post.description %></h3>
+      <p>Edit <%= link_to post.title, edit_blog_post_path(post) %></p>
     </div>
   <% end %>
 </div>

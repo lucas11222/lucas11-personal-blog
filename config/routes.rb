@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     collection do
       post :import_from_md
     end
+    get 'blog_posts/:id/delete', to: 'blog_posts#delete', as: 'delete_blog_post'
   end
   root "blog_posts#index"
 end
