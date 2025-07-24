@@ -19,7 +19,6 @@ DELETE /api/(id) Deletes a post.
 
 body for PATCH and POST:
 
-json```
 ```
 {
   "blog_post": {
