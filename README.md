@@ -20,7 +20,7 @@ DELETE /api/(id) Deletes a post.
 body for PATCH and POST:
 
 json```
-
+```
 {
   "blog_post": {
     "title": "THE POST",
@@ -28,7 +28,5 @@ json```
     "body": "# hello"
   }
 }
-
 ```
-
 (the error handleing is in the api not in blog_posts please dont use that and if you have questions of the api maybe the api_controler can help you out.)
